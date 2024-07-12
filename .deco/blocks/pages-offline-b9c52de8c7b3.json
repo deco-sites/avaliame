@@ -1,0 +1,19 @@
+{
+  "name": "Offline",
+  "path": "/offline",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "title": "Oh no! You are offline!",
+      "products": null,
+      "description": "Maybe take some time to explore",
+      "__resolveType": "site/sections/Product/ProductShelf.tsx"
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

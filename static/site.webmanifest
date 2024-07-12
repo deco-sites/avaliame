@@ -1,0 +1,13 @@
+{
+    "theme_color": "#5f9b9a",
+    "background_color": "#a3adcc",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "id": "/?source=pwa",
+    "short_name": "Storefront",
+    "orientation": "portrait",
+    "icons": [],
+    "name": "Storefront by Deco",
+    "description": "Storefront made with love in Rio"
+}
