@@ -60,8 +60,9 @@ export const loader = async (
   }
 };
 
-export default function CommentList({ comments, key }: SectionProps<typeof loader>) {
-
+export default function CommentList(
+  { comments, key }: SectionProps<typeof loader>,
+) {
   console.log("Comments-------->", comments);
   const feedbackDescriptions = extractFeedbackDescriptions(comments ?? []);
 

@@ -1,5 +1,5 @@
 import Star from "./Star.tsx";
-import formatDateTime from '../../utils/formatDateTime.ts'
+import formatDateTime from "../../utils/formatDateTime.ts";
 
 export type Props = {
   comment: {
@@ -12,7 +12,6 @@ export type Props = {
     product: string;
   };
 };
-
 
 export default function Comment({ comment }: Props) {
   return (

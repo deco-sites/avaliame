@@ -39,14 +39,14 @@ export async function aiGenerator(
         max_tokens: 70,
       }),
     });
-    const data = await response.json() as { choices: { message: { content: string } }[] };
+    const data = await response.json() as {
+      choices: { message: { content: string } }[];
+    };
     console.log("GPT OPINION ------->", data.choices[0].message.content);
-
   } catch (error) {
     console.error("Error calling OpenAI API:", error);
     return `Error: ${error.message}`;
   }
-
 
   // return data.choices[0].text.trim();
   return "tets";
