@@ -14,7 +14,7 @@
       ]
     },
     {
-      "__resolveType": "site/sections/avaliame/FeedbackForm.tsx"
+      "__resolveType": "site/sections/avaliame/FeedbackInput.tsx"
     },
     {
       "__resolveType": "site/sections/avaliame/Box.tsx",

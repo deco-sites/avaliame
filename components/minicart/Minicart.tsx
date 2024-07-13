@@ -125,7 +125,7 @@ export default function Cart({
 }: { cart: Minicart }) {
   const count = items.length;
 
-  console.log("items---------->", items);
+  // console.log("items---------->", items);
 
   return (
     <>
