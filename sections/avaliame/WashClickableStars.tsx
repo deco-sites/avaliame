@@ -39,7 +39,7 @@ export default function ClickableStars(props: Props) {
 
   const starLouca = (
     <div id={randomId} class="flex gap-1">
-      <input type="hidden" name="rating" value={rating} />
+      <input type="hidden" name="wash" value={rating} />
       {stars.map((s, i) => (
         <div>
           <input
@@ -47,15 +47,15 @@ export default function ClickableStars(props: Props) {
               ...props,
               rating: i + 1,
             })}
-            id={i + "click"}
+            id={i + "wash"}
             type="radio"
             class="hidden"
             hx-target={`#${randomId}`}
             hx-swap="outerHTML"
           />
-          <label for={i + "click"} htmlFor={i + "click"} class="cursor-pointer">
+          <label for={i + "wash"} htmlFor={i + "wash"} class="cursor-pointer">
             {" "}
-            <Icon width={36} height={36} id={s} />
+            <Icon id={s} />
           </label>
         </div>
       ))}
@@ -67,11 +67,7 @@ export default function ClickableStars(props: Props) {
   }
 
   return (
-    <div
-      class={`flex ${
-        title ? "justify-between" : "justify-center"
-      }  w-full border-b p-2`}
-    >
+    <div class="flex justify-between w-full border-b p-2">
       <h3 class="text-sm">{title}</h3>
       {starLouca}
     </div>

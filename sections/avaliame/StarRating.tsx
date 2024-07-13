@@ -23,40 +23,40 @@ export default function StarRating({
   }
 
   return (
-    <div id="target" class="flex justify-between p-2 border-b w-full">
+    <div id="targett" class="flex justify-between p-2 border-b w-full">
       <h3 class="mb-4">{title.title}</h3>
       <div class="flex gap-1">
         <button
           hx-swap="outerHTML"
-          hx-target="#target"
+          hx-target="#targett"
           hx-get={useSection({ props: { rating: 1 } })}
         >
           <Icon id="empty-star" />
         </button>
         <button
           hx-swap="outerHTML"
-          hx-target="#target"
+          hx-target="#targett"
           hx-get={useSection({ props: { rating: 2 } })}
         >
           <Icon id="empty-star" />
         </button>
         <button
           hx-swap="outerHTML"
-          hx-target="#target"
+          hx-target="#targett"
           hx-get={useSection({ props: { rating: 3 } })}
         >
           <Icon id="empty-star" />
         </button>
         <button
           hx-swap="outerHTML"
-          hx-target="#target"
+          hx-target="#targett"
           hx-get={useSection({ props: { rating: 4 } })}
         >
           <Icon id="empty-star" />
         </button>
         <button
           hx-swap="outerHTML"
-          hx-target="#target"
+          hx-target="#targett"
           hx-get={useSection({ props: { rating: 5 } })}
         >
           <Icon id="empty-star" />

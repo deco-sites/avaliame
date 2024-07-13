@@ -6,24 +6,64 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "site/sections/avaliame/Box.tsx",
+      "__resolveType": "site/sections/avaliame/FeedbackForm.tsx",
       "sections": [
         {
-          "__resolveType": "site/sections/avaliame/FeedbackInput.tsx"
+          "__resolveType": "site/sections/avaliame/Box.tsx",
+          "sections": [
+            {
+              "__resolveType": "site/sections/avaliame/ProductInfos.tsx",
+              "product": {
+                "__resolveType": "PDP Loader"
+              }
+            },
+            {
+              "__resolveType": "site/sections/avaliame/ClickableStars.tsx"
+            }
+          ],
+          "title": "O que você achou do produto?"
+        },
+        {
+          "__resolveType": "site/sections/avaliame/Box.tsx",
+          "sections": [
+            {
+              "__resolveType": "site/sections/avaliame/FeedbackInput.tsx",
+              "title": "Dê mais detalhes sobre seu produto",
+              "description": "(Opcional)",
+              "inputs": [
+                {
+                  "input": "text",
+                  "name": "feedback_title",
+                  "placeholder": "Titulo da avaliação"
+                },
+                {
+                  "input": "textArea",
+                  "name": "feedback_description",
+                  "placeholder": "Eu achei que meu produto..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__resolveType": "site/sections/avaliame/Box.tsx",
+          "title": "Avalie as características",
+          "sections": [
+            {
+              "__resolveType": "site/sections/avaliame/CostBenefitClickableStars.tsx",
+              "title": "Custo benefício"
+            },
+            {
+              "__resolveType": "site/sections/avaliame/QualityClickableStars.tsx",
+              "title": "Qualidade do tecido"
+            },
+            {
+              "__resolveType": "site/sections/avaliame/WashClickableStars.tsx",
+              "title": "Qual é a fixação da cor após a lavagem?"
+            }
+          ]
         }
       ]
-    },
-    {
-      "__resolveType": "site/sections/avaliame/FeedbackForm.tsx"
-    },
-    {
-      "__resolveType": "site/sections/avaliame/Box.tsx",
-      "sections": [
-        {
-          "__resolveType": "site/sections/avaliame/ClickableStars.tsx"
-        }
-      ],
-      "title": "Avalie as características"
     },
     {
       "__resolveType": "Footer"
