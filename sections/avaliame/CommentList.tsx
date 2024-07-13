@@ -2,12 +2,20 @@ import { supabase } from "../../supabase/index.ts";
 import Comment, { Props as CommentProps } from "./Comment.tsx";
 import { type AppContext } from "../../apps/site.ts";
 import { SectionProps } from "deco/mod.ts";
+import {
+  aiGenerator,
+  extractFeedbackDescriptions,
+} from "../../utils/aiGenerator.ts";
 
 // deno-lint-ignore ban-types
 export type CommentListProps = {};
 
+interface Key {
+  key: string;
+}
+
 export const loader = async (
-  _props: CommentProps,
+  props: Key,
   _req: Request,
   _ctx: AppContext,
 ) => {
@@ -48,12 +56,19 @@ export const loader = async (
     } else {
       console.error("Error during fetching comments:", error);
     }
-    return { comments: null };
+    return { comments: null, key: props.key };
   }
 };
 
-export default function CommentList({ comments }: SectionProps<typeof loader>) {
-  console.log("Received comments:", comments);
+export default function CommentList({ comments, key }: SectionProps<typeof loader>) {
+
+  console.log("Comments-------->", comments);
+  const feedbackDescriptions = extractFeedbackDescriptions(comments ?? []);
+
+  console.log("Feedbacks-------->", feedbackDescriptions);
+  aiGenerator(feedbackDescriptions, key!).then((opinion) => {
+    console.log("Opinião geral:", opinion);
+  });
 
   return (
     <div className="gap-4 flex flex-col">

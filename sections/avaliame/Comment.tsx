@@ -1,4 +1,5 @@
 import Star from "./Star.tsx";
+import formatDateTime from '../../utils/formatDateTime.ts'
 
 export type Props = {
   comment: {
@@ -12,13 +13,13 @@ export type Props = {
   };
 };
 
+
 export default function Comment({ comment }: Props) {
-  console.log("ola", comment);
   return (
     <div className="flex flex-col w-96 gap-2">
       <div className="flex flex-row w-full justify-between	">
         <Star rating={comment.rating} />
-        <span className="text-sm">{comment.created_at}</span>
+        <span className="text-sm">{formatDateTime(comment.created_at)}</span>
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="text-lg">{comment.feedback_title}</h3>
