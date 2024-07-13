@@ -14,13 +14,13 @@
       ]
     },
     {
+      "__resolveType": "site/sections/avaliame/FeedbackForm.tsx"
+    },
+    {
       "__resolveType": "site/sections/avaliame/Box.tsx",
       "sections": [
         {
-          "__resolveType": "site/sections/avaliame/StarRating.tsx",
-          "title": {
-            "title": "Custo-benefício"
-          }
+          "__resolveType": "site/sections/avaliame/ClickableStars.tsx"
         }
       ],
       "title": "Avalie as características"

@@ -1,5 +1,4 @@
 import { supabase } from "../../supabase/index.ts";
-import { useComponent } from "../Component.tsx";
 import { getIP } from "https://deno.land/x/get_ip@v2.0.0/mod.ts";
 
 export async function action(_: unknown, request: Request) {
@@ -27,7 +26,7 @@ export async function action(_: unknown, request: Request) {
 
 export default function FeedbackInput() {
   return (
-    <div class="flex gap-12 flex-col items-center w-full m-auto max-w-[40rem]">
+    <div class="flex gap-4 flex-col items-center w-full m-auto max-w-[40rem]">
       <div class="flex flex-col items-center gap-2">
         <h2 class="text-2xl">Dê mais detalhes sobre seu produto</h2>
         <span class="text-sm text-gray-600">(Opcional)</span>

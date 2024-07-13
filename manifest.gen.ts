@@ -21,11 +21,12 @@ import * as $$$$$$30 from "./sections/avaliame/Carroussel.tsx";
 import * as $$$$$$31 from "./sections/avaliame/ClickableStars.tsx";
 import * as $$$$$$32 from "./sections/avaliame/Comment.tsx";
 import * as $$$$$$33 from "./sections/avaliame/CommentList.tsx";
-import * as $$$$$$34 from "./sections/avaliame/FeedbackInput.tsx";
-import * as $$$$$$35 from "./sections/avaliame/ProductOpinions.tsx";
-import * as $$$$$$36 from "./sections/avaliame/Ratings.tsx";
-import * as $$$$$$37 from "./sections/avaliame/Star.tsx";
-import * as $$$$$$38 from "./sections/avaliame/StarRating.tsx";
+import * as $$$$$$34 from "./sections/avaliame/FeedbackForm.tsx";
+import * as $$$$$$35 from "./sections/avaliame/FeedbackInput.tsx";
+import * as $$$$$$36 from "./sections/avaliame/ProductOpinions.tsx";
+import * as $$$$$$37 from "./sections/avaliame/Ratings.tsx";
+import * as $$$$$$38 from "./sections/avaliame/Star.tsx";
+import * as $$$$$$39 from "./sections/avaliame/StarRating.tsx";
 import * as $$$$$$1 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$2 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$3 from "./sections/Component.tsx";
@@ -71,11 +72,12 @@ const manifest = {
     "site/sections/avaliame/ClickableStars.tsx": $$$$$$31,
     "site/sections/avaliame/Comment.tsx": $$$$$$32,
     "site/sections/avaliame/CommentList.tsx": $$$$$$33,
-    "site/sections/avaliame/FeedbackInput.tsx": $$$$$$34,
-    "site/sections/avaliame/ProductOpinions.tsx": $$$$$$35,
-    "site/sections/avaliame/Ratings.tsx": $$$$$$36,
-    "site/sections/avaliame/Star.tsx": $$$$$$37,
-    "site/sections/avaliame/StarRating.tsx": $$$$$$38,
+    "site/sections/avaliame/FeedbackForm.tsx": $$$$$$34,
+    "site/sections/avaliame/FeedbackInput.tsx": $$$$$$35,
+    "site/sections/avaliame/ProductOpinions.tsx": $$$$$$36,
+    "site/sections/avaliame/Ratings.tsx": $$$$$$37,
+    "site/sections/avaliame/Star.tsx": $$$$$$38,
+    "site/sections/avaliame/StarRating.tsx": $$$$$$39,
     "site/sections/Category/CategoryBanner.tsx": $$$$$$1,
     "site/sections/Category/CategoryGrid.tsx": $$$$$$2,
     "site/sections/Component.tsx": $$$$$$3,

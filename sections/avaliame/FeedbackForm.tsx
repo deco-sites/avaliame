@@ -3,9 +3,9 @@ import { supabase } from "../../supabase/index.ts";
 import { Section } from "deco/mod.ts";
 import { useComponent } from "../Component.tsx";
 
-export type Props={
-    sections: Section[]
-}
+export type Props = {
+  sections: Section[];
+};
 
 export async function action(_: unknown, request: Request) {
   try {
@@ -30,17 +30,17 @@ export async function action(_: unknown, request: Request) {
   }
 }
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ sections }: Props) {
   return (
     <form
       hx-post={useComponent(import.meta.url)}
       hx-trigger="submit"
       class="w-full flex flex-col gap-4"
     >
-      
-        <button type="submit" class="bg-blue-500 text-white rounded p-2 w-32">
-          Submit
-        </button>
+      {sections.map((s) => <s.Component {...s.props} />)}
+      <button type="submit" class="bg-blue-500 text-white rounded p-2 w-32">
+        Submit
+      </button>
     </form>
   );
 }
