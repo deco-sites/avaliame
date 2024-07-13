@@ -1,0 +1,9 @@
+{
+  "__resolveType": "shopify/actions/cart/addItems.ts",
+  "lines": {
+    "attributes": [],
+    "merchandiseId": "ttst",
+    "quantity": 3,
+    "sellingPlanId": "3"
+  }
+}

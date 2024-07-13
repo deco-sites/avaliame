@@ -23,16 +23,17 @@ function ProductInfo({ page }: Props) {
   }
 
   const { breadcrumbList, product } = page;
-  const { productID, offers, isVariantOf } = product;
+  const { productID, offers, isVariantOf, url } = product;
+  const regex = /\/products\/([^?]+)/;
+  const match = url?.match(regex);
+  const productId = match?.[1];
+
+  // console.log('page'+ JSON.stringify(page))
+
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
 
-  const {
-    price = 0,
-    listPrice,
-    seller = "1",
-    availability,
-  } = useOffer(offers);
+  const { price = 0, listPrice, seller = "1", availability } = useOffer(offers);
 
   const percent = listPrice && price
     ? Math.round(((listPrice - price) / listPrice) * 100)
@@ -84,9 +85,7 @@ function ProductInfo({ page }: Props) {
       </span>
 
       {/* Product Name */}
-      <span class={clx("text-3xl font-semibold", "pt-4")}>
-        {title}
-      </span>
+      <span class={clx("text-3xl font-semibold", "pt-4")}>{title}</span>
 
       {/* Prices */}
       <div class="flex gap-3 pt-1">
@@ -118,6 +117,11 @@ function ProductInfo({ page }: Props) {
                 disabled={false}
               />
               <WishlistButton item={item} />
+              <a href={`/feedback/${productId}`}>
+                <button class="btn btn-primary no-animation">
+                  Avaliar AAAAAAA
+                </button>
+              </a>
             </>
           )
           : <OutOfStock productID={productID} />}

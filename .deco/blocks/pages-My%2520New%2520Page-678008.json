@@ -1,0 +1,36 @@
+{
+  "name": "Feedback page",
+  "path": "/feedback/:slug",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/avaliame/Box.tsx",
+      "sections": [
+        {
+          "__resolveType": "site/sections/avaliame/FeedbackInput.tsx"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/avaliame/Box.tsx",
+      "sections": [
+        {
+          "__resolveType": "site/sections/avaliame/StarRating.tsx",
+          "title": {
+            "title": "Custo-benefício"
+          }
+        }
+      ],
+      "title": "Avalie as características"
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

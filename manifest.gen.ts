@@ -9,11 +9,23 @@ import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/shopify.ts";
 import * as $$$$$$$$$$$3 from "./apps/site.ts";
 import * as $$$0 from "./loaders/availableIcons.ts";
-import * as $$$1 from "./loaders/icons.ts";
-import * as $$$2 from "./loaders/minicart.ts";
-import * as $$$3 from "./loaders/user.ts";
-import * as $$$4 from "./loaders/wishlist.ts";
+import * as $$$1 from "./loaders/getRatings.ts";
+import * as $$$2 from "./loaders/icons.ts";
+import * as $$$3 from "./loaders/minicart.ts";
+import * as $$$4 from "./loaders/user.ts";
+import * as $$$5 from "./loaders/wishlist.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
+import * as $$$$$$28 from "./sections/avaliame/Avaliame.tsx";
+import * as $$$$$$29 from "./sections/avaliame/Box.tsx";
+import * as $$$$$$30 from "./sections/avaliame/Carroussel.tsx";
+import * as $$$$$$31 from "./sections/avaliame/ClickableStars.tsx";
+import * as $$$$$$32 from "./sections/avaliame/Comment.tsx";
+import * as $$$$$$33 from "./sections/avaliame/CommentList.tsx";
+import * as $$$$$$34 from "./sections/avaliame/FeedbackInput.tsx";
+import * as $$$$$$35 from "./sections/avaliame/ProductOpinions.tsx";
+import * as $$$$$$36 from "./sections/avaliame/Ratings.tsx";
+import * as $$$$$$37 from "./sections/avaliame/Star.tsx";
+import * as $$$$$$38 from "./sections/avaliame/StarRating.tsx";
 import * as $$$$$$1 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$2 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$3 from "./sections/Component.tsx";
@@ -45,13 +57,25 @@ import * as $$$$$$27 from "./sections/Theme/Theme.tsx";
 const manifest = {
   "loaders": {
     "site/loaders/availableIcons.ts": $$$0,
-    "site/loaders/icons.ts": $$$1,
-    "site/loaders/minicart.ts": $$$2,
-    "site/loaders/user.ts": $$$3,
-    "site/loaders/wishlist.ts": $$$4,
+    "site/loaders/getRatings.ts": $$$1,
+    "site/loaders/icons.ts": $$$2,
+    "site/loaders/minicart.ts": $$$3,
+    "site/loaders/user.ts": $$$4,
+    "site/loaders/wishlist.ts": $$$5,
   },
   "sections": {
     "site/sections/Animation/Animation.tsx": $$$$$$0,
+    "site/sections/avaliame/Avaliame.tsx": $$$$$$28,
+    "site/sections/avaliame/Box.tsx": $$$$$$29,
+    "site/sections/avaliame/Carroussel.tsx": $$$$$$30,
+    "site/sections/avaliame/ClickableStars.tsx": $$$$$$31,
+    "site/sections/avaliame/Comment.tsx": $$$$$$32,
+    "site/sections/avaliame/CommentList.tsx": $$$$$$33,
+    "site/sections/avaliame/FeedbackInput.tsx": $$$$$$34,
+    "site/sections/avaliame/ProductOpinions.tsx": $$$$$$35,
+    "site/sections/avaliame/Ratings.tsx": $$$$$$36,
+    "site/sections/avaliame/Star.tsx": $$$$$$37,
+    "site/sections/avaliame/StarRating.tsx": $$$$$$38,
     "site/sections/Category/CategoryBanner.tsx": $$$$$$1,
     "site/sections/Category/CategoryGrid.tsx": $$$$$$2,
     "site/sections/Component.tsx": $$$$$$3,

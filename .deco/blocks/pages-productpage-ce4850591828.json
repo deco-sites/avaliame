@@ -24,6 +24,18 @@
       }
     },
     {
+      "__resolveType": "site/sections/avaliame/ProductOpinions.tsx",
+      "sections": [
+        {
+          "__resolveType": "site/sections/avaliame/CommentList.tsx",
+          "comments": []
+        },
+        {
+          "__resolveType": "site/sections/avaliame/Carroussel.tsx"
+        }
+      ]
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "You may also like",
       "products": {
@@ -43,6 +55,9 @@
     },
     {
       "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
+    },
+    {
+      "__resolveType": "site/sections/avaliame/FeedbackInput.tsx"
     },
     {
       "__resolveType": "Footer"

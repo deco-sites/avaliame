@@ -9,6 +9,7 @@ import QuantitySelector from "../ui/QuantitySelector.tsx";
 export type Item = AnalyticsItem & {
   listPrice: number;
   image: string;
+  item_url: string
 };
 
 export interface Props {
@@ -61,7 +62,7 @@ function CartItem({ item, index, locale, currency }: Props) {
           <button
             class={clx(
               isGift && "hidden",
-              "btn btn-ghost btn-square no-animation",
+              "btn btn-ghost btn-square no-animation"
             )}
             hx-on:click={useScript(removeItemHandler)}
           >

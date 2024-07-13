@@ -208,5 +208,11 @@
   "/.deco/blocks/023.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Header/Header.tsx"
+  },
+  "/.deco/blocks/pages-My%2520New%2520Page-678008.json": {
+    "name": "Feedback page",
+    "path": "/feedback/:slug",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
