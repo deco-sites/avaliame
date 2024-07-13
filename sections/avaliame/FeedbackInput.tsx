@@ -1,55 +1,48 @@
-import { supabase } from "../../supabase/index.ts";
-import { getIP } from "https://deno.land/x/get_ip@v2.0.0/mod.ts";
+import ClickableStars from "./ClickableStars.tsx";
 
-export async function action(_: unknown, request: Request) {
-  try {
-    const user = await getIP({ ipv6: true });
+type Input = {
+  input: "text" | "textArea" | "starRating";
+  placeholder?: string;
+  name?: string;
+};
 
-    const regex = /\/feedback\/([^?]+)/;
-    const match = request.url.match(regex);
-    const productId = match?.[1];
+export type Props = {
+  title?: string;
+  description?: string;
+  inputs: Input[];
+};
 
-    const result = await request.formData();
-    const { error } = await supabase.from("feedback").insert({
-      rating: result.get("rating"),
-      feedback_title: result.get("feedback_title"),
-      feedback_description: result.get("feedback_description"),
-      user,
-      product: productId,
-    });
-
-    return error ? { success: false, error } : { success: true };
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-export default function FeedbackInput() {
+export default function FeedbackInput({ inputs, description, title }: Props) {
   return (
     <div class="flex gap-4 flex-col items-center w-full m-auto max-w-[40rem]">
       <div class="flex flex-col items-center gap-2">
-        <h2 class="text-2xl">Dê mais detalhes sobre seu produto</h2>
-        <span class="text-sm text-gray-600">(Opcional)</span>
+        <h2 class="text-2xl">{title}</h2>
+        <span class="text-sm text-gray-600">{description}</span>
       </div>
 
-      <textarea
-        name="feedback_description"
-        maxLength={1500}
-        class="border w-full h-52 resize-none rounded p-2"
-        placeholder="Eu achei que meu produto..."
-      />
-      <input
-        type="number"
-        name="rating"
-        placeholder="Rating (number)"
-        class="border p-2 rounded w-full"
-      />
-      <input
-        type="text"
-        name="feedback_title"
-        placeholder="Feedback Title"
-        class="border p-2 rounded w-full"
-      />
+      {inputs.map((inp) => {
+        if (inp.input == "text") {
+          return (
+            <input
+              type="text"
+              name={inp.name}
+              placeholder={inp.placeholder}
+              class="border p-2 rounded w-full"
+            />
+          );
+        } else if (inp.input == "textArea") {
+          return (
+            <textarea
+              name={inp.name}
+              maxLength={1500}
+              class="border w-full h-52 resize-none rounded p-2"
+              placeholder={inp.placeholder}
+            />
+          );
+        } else if (inp.input == "starRating") {
+          return <ClickableStars />;
+        }
+      })}
     </div>
   );
 }
