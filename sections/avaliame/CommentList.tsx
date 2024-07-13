@@ -22,7 +22,7 @@ export const loader = async (
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const timeoutId = setTimeout(() => controller.abort(), 500);
 
     const response = await supabase
       .from("feedback")
