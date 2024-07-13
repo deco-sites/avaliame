@@ -57,9 +57,6 @@
       "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
     },
     {
-      "__resolveType": "site/sections/avaliame/FeedbackInput.tsx"
-    },
-    {
       "__resolveType": "Footer"
     }
   ],
