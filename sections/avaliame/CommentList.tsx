@@ -6,9 +6,7 @@ import {
   aiGenerator,
   extractFeedbackDescriptions,
 } from "../../utils/aiGenerator.ts";
-
-// deno-lint-ignore ban-types
-export type CommentListProps = {};
+import Icon from "../../components/ui/Icon.tsx";
 
 interface Key {
   key: string;
@@ -45,29 +43,41 @@ export const loader = async (props: Key, _req: Request, _ctx: AppContext) => {
 
     const comments = data;
 
-    return { comments };
+    console.log("Comments-------->", comments);
+    const feedbackDescriptions = extractFeedbackDescriptions(comments ?? []);
+
+    console.log("Feedbacks-------->", feedbackDescriptions);
+    const opinion = await aiGenerator(feedbackDescriptions, props.key);
+
+    console.log(opinion);
+
+    return { comments, generalOpinion: opinion };
   } catch (error) {
     if (error.name === "AbortError") {
       console.error("Fetch aborted due to timeout");
     } else {
       console.error("Error during fetching comments:", error);
     }
-    return { comments: null, key: props.key };
+    return { comments: null, key: null };
   }
 };
 
 export default function CommentList({
   comments,
-  key,
+  generalOpinion,
 }: SectionProps<typeof loader>) {
-  const feedbackDescriptions = extractFeedbackDescriptions(comments ?? []);
-
-  aiGenerator(feedbackDescriptions, key!).then((_opinion) => {
-  });
-
   return (
-    <div className="gap-4 flex flex-col">
+    <div className="gap-4 flex flex-col w-full">
       <h1 className="font-[600] text-lg">Opiniões em destaque</h1>
+      <div class="">
+        <div class="">{generalOpinion}</div>
+        <div class="flex gap-2 mt-3 text-gray-600">
+          <Icon width={20} height={20} id="ai" />
+          <span class="text-sm">
+            Resumo com base em opiniões de compradores
+          </span>
+        </div>
+      </div>
       {comments?.map((comment, index) => (
         <Comment key={index} comment={comment} />
       ))}

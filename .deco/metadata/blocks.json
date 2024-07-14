@@ -214,5 +214,9 @@
     "path": "/feedback/:slug",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/Preview%20%2Fsections%2Favaliame%2FProductOpinions.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/avaliame/ProductOpinions.tsx"
   }
 }

@@ -8,9 +8,7 @@ export type Props = {
   product: string;
 };
 
-export function extractFeedbackDescriptions(
-  comments: Props[],
-): string[] {
+export function extractFeedbackDescriptions(comments: Props[]): string[] {
   return comments.map((comment) => comment.feedback_description);
 }
 
@@ -21,14 +19,18 @@ export async function aiGenerator(
   const apiKey = key;
   const prompt =
     `Por favor, Imagine que voce e um consumidor e formule uma opinião imparcial de até 50 palavras baseado nessas opiniões: ${
-      JSON.stringify(feedbackDescriptions)
+      JSON.stringify(
+        feedbackDescriptions,
+      )
     }`;
+  let data;
   try {
+    console.log(apiKey);
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
@@ -36,10 +38,12 @@ export async function aiGenerator(
           { role: "system", content: "Você é um assistente útil." },
           { role: "user", content: prompt },
         ],
-        max_tokens: 70,
+        max_tokens: 200,
       }),
+      // Adding a timeout option (if your environment supports it)
+      signal: AbortSignal.timeout(10000), // 10 seconds timeout
     });
-    const data = await response.json() as {
+    data = (await response.json()) as {
       choices: { message: { content: string } }[];
     };
     console.log("GPT OPINION ------->", data.choices[0].message.content);
@@ -48,6 +52,5 @@ export async function aiGenerator(
     return `Error: ${error.message}`;
   }
 
-  // return data.choices[0].text.trim();
-  return "tets";
+  return data.choices[0].message.content;
 }

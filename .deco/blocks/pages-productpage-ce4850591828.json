@@ -28,7 +28,8 @@
       "sections": [
         {
           "__resolveType": "site/sections/avaliame/CommentList.tsx",
-          "comments": []
+          "comments": [],
+          "key": ""
         },
         {
           "__resolveType": "site/sections/avaliame/Carroussel.tsx"
