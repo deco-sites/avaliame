@@ -25,11 +25,11 @@ export const loader = async (_: unknown, _req: Request) => {
 
   const ratingLength = ratings?.length || 0;
 
-  const ratingAverage =
-    ratings?.reduce((sum, rating) => sum + rating, 0) / ratingLength;
+  const ratingAverage = ratings?.reduce((sum, rating) => sum + rating, 0) /
+    ratingLength;
 
   const productInfo = {
-    rating: Number(ratingAverage.toFixed(2)),
+    rating: ratingAverage ? ratingAverage : 0,
     count: count,
   };
 
@@ -40,7 +40,9 @@ export default function Ratings(props: SectionProps<typeof loader>) {
   return (
     <div className="flex flex-row gap-2">
       <h1 className="text-5xl		 text-green-600	font-[700]">
-        {props.productInfo.rating}
+        {props.productInfo.rating
+          ? props.productInfo.rating.toFixed(2)
+          : "0.00"}
       </h1>
       <div className="flex flex-col">
         <Star rating={props.productInfo.rating} />
