@@ -112,7 +112,7 @@ export default function CommentList({
   return (
     <div className="gap-4 flex flex-col w-full">
       <details class="dropdown">
-        <summary class="btn m-1 px-4">Ordenar ▼</summary>
+        <summary class="btn m-1 px-4">Ordenar ⌵</summary>
         <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
           <li>
             <button
