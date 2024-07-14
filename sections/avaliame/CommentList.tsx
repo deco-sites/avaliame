@@ -56,8 +56,6 @@ export const loader = async (props: Key, _req: Request, _ctx: AppContext) => {
 
     const opinion = await aiGenerator(feedbackDescriptions, props.key);
 
-    console.log(opinion);
-
     return {
       comments,
       generalOpinion: opinion,

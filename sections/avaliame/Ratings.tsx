@@ -17,16 +17,21 @@ export const loader = async (_: unknown, _req: Request) => {
 
   clearTimeout(timeoutId);
 
-  const { data, count } = response;
+  const { data } = response;
+
+  const count = data?.length || 0;
 
   const ratings = data?.map((d) => d.rating);
 
   const ratingLength = ratings?.length || 0;
 
-  const ratingAverage = ratings?.reduce((sum, rating) => sum + rating, 0) /
-    ratingLength;
+  const ratingAverage =
+    ratings?.reduce((sum, rating) => sum + rating, 0) / ratingLength;
 
-  const productInfo = { rating: ratingAverage, count: count };
+  const productInfo = {
+    rating: Number(ratingAverage.toFixed(2)),
+    count: count,
+  };
 
   return { productInfo };
 };

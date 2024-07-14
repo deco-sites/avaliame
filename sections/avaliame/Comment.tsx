@@ -1,3 +1,4 @@
+import Image from "apps/website/components/Image.tsx";
 import Star from "./Star.tsx";
 
 export type Props = {
@@ -9,33 +10,30 @@ export type Props = {
     user: string;
     created_at: string;
     product: string;
+    image: string;
   };
 };
 
 export default function Comment({ comment }: Props) {
   return (
-    <div class="mt-8">
-      <div key={comment.id} class="mb-4">
-        <div class="flex items-center justify-between w-full mb-2">
-          <span>
-            <Star rating={comment.rating} />
-          </span>
-          <span class="text-sm text-gray-500">
-            {new Date(comment.created_at).toLocaleString()}
-          </span>
-        </div>
-        <div class="">{comment.feedback_description}</div>
+<div className="mt-8 space-y-4">
+    <div key={comment.id} className="p-4 bg-white rounded-lg shadow-sm">
+      <div className="flex items-center justify-between mb-3">
+        <span>
+          <Star rating={comment.rating} />
+        </span>
+        <span className="text-sm text-gray-500">
+          {new Date(comment.created_at).toLocaleString()}
+        </span>
       </div>
+      {comment.image && (
+        <div className="mb-3">
+          <Image src={comment.image} width={100} className="rounded-md" />
+        </div>
+      )}
+      <div className="text-gray-800">{comment.feedback_description}</div>
     </div>
-    // <div className="flex flex-col w-96 gap-2">
-    //   <div className="flex flex-row w-full justify-between	">
-    //     <Star rating={comment.rating} />
-    //     <span className="text-sm">{formatDateTime(comment.created_at)}</span>
-    //   </div>
-    //   <div className="flex flex-col gap-1">
-    //     <h3 className="text-lg">{comment.feedback_title}</h3>
-    //     <p>{comment.feedback_description}</p>
-    //   </div>
-    // </div>
+</div>
+
   );
 }
