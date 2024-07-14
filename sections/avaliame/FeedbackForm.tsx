@@ -45,7 +45,8 @@ export async function action(props: Props, request: Request, _: AppContext) {
       wash: result.get("wash"),
       user,
       product: productId,
-      image: `https://fgdjvuulxptiwpucmbwj.supabase.co/storage/v1/object/public/images/${file.name}`
+      image:
+        `https://fgdjvuulxptiwpucmbwj.supabase.co/storage/v1/object/public/images/${file.name}`,
     });
 
     if (feedbackInsert.error) {
