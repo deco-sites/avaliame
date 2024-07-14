@@ -2075,6 +2075,17 @@
           "viewId": "Code",
           "id": "%2F.deco%2Fblocks%2FPreview%2520%252Fsections%252Favaliame%252FProductOpinions.tsx.json::Code::code::Code::%7B%7D",
           "state": {
+            "__signal": null
+          }
+        },
+        "%2F.deco%2Fblocks%2FPreview%2520%252Fsections%252Favaliame%252FProductOpinions.tsx.json::Code::code::Code::%7B%7D": {
+          "name": "Code",
+          "icon": "code",
+          "accepts": "function",
+          "render": "function",
+          "viewId": "Code",
+          "id": "%2F.deco%2Fblocks%2FPreview%2520%252Fsections%252Favaliame%252FProductOpinions.tsx.json::Code::code::Code::%7B%7D",
+          "state": {
             "__signal": "error"
           }
         }
