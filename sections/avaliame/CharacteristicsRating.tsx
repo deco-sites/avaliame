@@ -1,6 +1,6 @@
-import { Section, SectionProps } from 'deco/mod.ts';
-import { supabase } from '../../supabase/index.ts';
-import Star from './Star.tsx';
+import { Section, SectionProps } from "deco/mod.ts";
+import { supabase } from "../../supabase/index.ts";
+import Star from "./Star.tsx";
 
 export interface Props {
   sections: Section[];
@@ -15,9 +15,9 @@ export const loader = async (props: Props, req: Request) => {
   const timeoutId = setTimeout(() => controller.abort(), 500);
 
   const response = await supabase
-    .from('feedback')
-    .select('*')
-    .eq('product', productId)
+    .from("feedback")
+    .select("*")
+    .eq("product", productId)
     .abortSignal(controller.signal);
 
   clearTimeout(timeoutId);
@@ -42,7 +42,7 @@ export default function CharacteristicsRating({
       acc.wash += curr.wash;
       return acc;
     },
-    { cost_benefit: 0, quality: 0, wash: 0 }
+    { cost_benefit: 0, quality: 0, wash: 0 },
   );
 
   const numFeedbacks = comments?.length;
@@ -57,20 +57,20 @@ export default function CharacteristicsRating({
   }
 
   return (
-    <div className='flex flex-col gap-2 mt-8'>
-      <h1 className='text-base		 text-black-600	font-semibold'>
+    <div className="flex flex-col gap-2 mt-8">
+      <h1 className="text-base		 text-black-600	font-semibold">
         Avaliação de características
       </h1>
-      <div className='flex flex-col'>
-        <span className={'font-[400] text-sm'}>Custo-benefício</span>
+      <div className="flex flex-col">
+        <span className={"font-[400] text-sm"}>Custo-benefício</span>
         <Star rating={averageValues.cost_benefit} />
       </div>
-      <div className='flex flex-col'>
-        <span className={'font-[400] text-sm'}>Qualidade</span>
+      <div className="flex flex-col">
+        <span className={"font-[400] text-sm"}>Qualidade</span>
         <Star rating={averageValues.quality} />
       </div>
-      <div className='flex flex-col'>
-        <span className={'font-[400] text-sm'}>Não encolhe na lavagem</span>
+      <div className="flex flex-col">
+        <span className={"font-[400] text-sm"}>Não encolhe na lavagem</span>
         <Star rating={averageValues.wash} />
       </div>
     </div>
