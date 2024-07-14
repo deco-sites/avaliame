@@ -1,6 +1,6 @@
-import { SectionProps } from "deco/mod.ts";
-import { supabase } from "../../supabase/index.ts";
-import Star from "./Star.tsx";
+import { SectionProps } from 'deco/mod.ts';
+import { supabase } from '../../supabase/index.ts';
+import Star from './Star.tsx';
 
 export const loader = async (_: unknown, _req: Request) => {
   const regex = /\/products\/([^?]+)/;
@@ -10,9 +10,9 @@ export const loader = async (_: unknown, _req: Request) => {
   const timeoutId = setTimeout(() => controller.abort(), 500);
 
   const response = await supabase
-    .from("feedback")
-    .select("*")
-    .eq("product", productId)
+    .from('feedback')
+    .select('*')
+    .eq('product', productId)
     .abortSignal(controller.signal);
 
   clearTimeout(timeoutId);
@@ -29,7 +29,7 @@ export const loader = async (_: unknown, _req: Request) => {
     ratings?.reduce((sum, rating) => sum + rating, 0) / ratingLength;
 
   const productInfo = {
-    rating: Number(ratingAverage.toFixed(2)),
+    rating: ratingAverage ? ratingAverage : 0,
     count: count,
   };
 
@@ -38,13 +38,15 @@ export const loader = async (_: unknown, _req: Request) => {
 
 export default function Ratings(props: SectionProps<typeof loader>) {
   return (
-    <div className="flex flex-row gap-2">
-      <h1 className="text-5xl		 text-green-600	font-[700]">
-        {props.productInfo.rating}
+    <div className='flex flex-row gap-2'>
+      <h1 className='text-5xl		 text-green-600	font-[700]'>
+        {props.productInfo.rating
+          ? props.productInfo.rating.toFixed(2)
+          : '0.00'}
       </h1>
-      <div className="flex flex-col">
+      <div className='flex flex-col'>
         <Star rating={props.productInfo.rating} />
-        <span className=" text-sm font-[300]">
+        <span className=' text-sm font-[300]'>
           {props.productInfo.count} avaliações
         </span>
       </div>
