@@ -37,6 +37,9 @@
       ],
       "sectionsLeft": [
         {
+          "__resolveType": "site/sections/avaliame/ImagesVisualizers.tsx"
+        },
+        {
           "__resolveType": "site/sections/avaliame/CommentList.tsx",
           "key": ""
         }

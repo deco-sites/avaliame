@@ -25,13 +25,14 @@ import * as $$$$$$34 from "./sections/avaliame/CommentList.tsx";
 import * as $$$$$$35 from "./sections/avaliame/CostBenefitClickableStars.tsx";
 import * as $$$$$$36 from "./sections/avaliame/FeedbackForm.tsx";
 import * as $$$$$$37 from "./sections/avaliame/FeedbackInput.tsx";
-import * as $$$$$$38 from "./sections/avaliame/ProductInfos.tsx";
-import * as $$$$$$39 from "./sections/avaliame/ProductOpinions.tsx";
-import * as $$$$$$40 from "./sections/avaliame/QualityClickableStars.tsx";
-import * as $$$$$$41 from "./sections/avaliame/Ratings.tsx";
-import * as $$$$$$42 from "./sections/avaliame/Star.tsx";
-import * as $$$$$$43 from "./sections/avaliame/StarRating.tsx";
-import * as $$$$$$44 from "./sections/avaliame/WashClickableStars.tsx";
+import * as $$$$$$38 from "./sections/avaliame/ImagesVisualizers.tsx";
+import * as $$$$$$39 from "./sections/avaliame/ProductInfos.tsx";
+import * as $$$$$$40 from "./sections/avaliame/ProductOpinions.tsx";
+import * as $$$$$$41 from "./sections/avaliame/QualityClickableStars.tsx";
+import * as $$$$$$42 from "./sections/avaliame/Ratings.tsx";
+import * as $$$$$$43 from "./sections/avaliame/Star.tsx";
+import * as $$$$$$44 from "./sections/avaliame/StarRating.tsx";
+import * as $$$$$$45 from "./sections/avaliame/WashClickableStars.tsx";
 import * as $$$$$$1 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$2 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$3 from "./sections/Component.tsx";
@@ -81,13 +82,14 @@ const manifest = {
     "site/sections/avaliame/CostBenefitClickableStars.tsx": $$$$$$35,
     "site/sections/avaliame/FeedbackForm.tsx": $$$$$$36,
     "site/sections/avaliame/FeedbackInput.tsx": $$$$$$37,
-    "site/sections/avaliame/ProductInfos.tsx": $$$$$$38,
-    "site/sections/avaliame/ProductOpinions.tsx": $$$$$$39,
-    "site/sections/avaliame/QualityClickableStars.tsx": $$$$$$40,
-    "site/sections/avaliame/Ratings.tsx": $$$$$$41,
-    "site/sections/avaliame/Star.tsx": $$$$$$42,
-    "site/sections/avaliame/StarRating.tsx": $$$$$$43,
-    "site/sections/avaliame/WashClickableStars.tsx": $$$$$$44,
+    "site/sections/avaliame/ImagesVisualizers.tsx": $$$$$$38,
+    "site/sections/avaliame/ProductInfos.tsx": $$$$$$39,
+    "site/sections/avaliame/ProductOpinions.tsx": $$$$$$40,
+    "site/sections/avaliame/QualityClickableStars.tsx": $$$$$$41,
+    "site/sections/avaliame/Ratings.tsx": $$$$$$42,
+    "site/sections/avaliame/Star.tsx": $$$$$$43,
+    "site/sections/avaliame/StarRating.tsx": $$$$$$44,
+    "site/sections/avaliame/WashClickableStars.tsx": $$$$$$45,
     "site/sections/Category/CategoryBanner.tsx": $$$$$$1,
     "site/sections/Category/CategoryGrid.tsx": $$$$$$2,
     "site/sections/Component.tsx": $$$$$$3,

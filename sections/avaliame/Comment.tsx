@@ -16,8 +16,8 @@ export type Props = {
 
 export default function Comment({ comment }: Props) {
   return (
-    <div className="mt-8 space-y-4">
-      <div key={comment.id} className="p-4 bg-white rounded-lg shadow-sm">
+    <div key={comment.id} className="mt-8 space-y-4">
+      <div className="p-4 bg-white rounded-lg shadow-sm">
         <div className="flex items-center justify-between mb-3">
           <span>
             <Star rating={comment.rating} />
