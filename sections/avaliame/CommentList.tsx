@@ -10,15 +10,15 @@ import Icon from "../../components/ui/Icon.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
 
 interface Key {
-  key: string;
+  key?: string;
   /*
   @hide
   */
-  recente: boolean;
+  recente?: boolean;
   /*
   @hide
   */
-  qualification: boolean;
+  qualification?: boolean;
 }
 
 export const loader = async (props: Key, _req: Request, _ctx: AppContext) => {
