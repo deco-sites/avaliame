@@ -37,9 +37,14 @@
                   "placeholder": "Titulo da avaliação"
                 },
                 {
-                  "input": "textArea",
                   "name": "feedback_description",
-                  "placeholder": "Eu achei que meu produto..."
+                  "placeholder": "Eu achei que meu produto...",
+                  "input": "textArea"
+                },
+                {
+                  "input": "file",
+                  "placeholder": "Test",
+                  "name": "file"
                 }
               ]
             }
