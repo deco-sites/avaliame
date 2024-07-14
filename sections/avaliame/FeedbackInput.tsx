@@ -1,7 +1,7 @@
 import ClickableStars from "./ClickableStars.tsx";
 
 type Input = {
-  input: "text" | "textArea" | "starRating";
+  input: "text" | "textArea" | "starRating" | "file";
   placeholder?: string;
   name?: string;
 };
@@ -20,10 +20,11 @@ export default function FeedbackInput({ inputs, description, title }: Props) {
         <span class="text-sm text-gray-600">{description}</span>
       </div>
 
-      {inputs.map((inp) => {
+      {inputs.map((inp, index) => {
         if (inp.input == "text") {
           return (
             <input
+              key={index}
               type="text"
               name={inp.name}
               placeholder={inp.placeholder}
@@ -33,6 +34,7 @@ export default function FeedbackInput({ inputs, description, title }: Props) {
         } else if (inp.input == "textArea") {
           return (
             <textarea
+              key={index}
               name={inp.name}
               maxLength={1500}
               class="border w-full h-52 resize-none rounded p-2"
@@ -40,7 +42,16 @@ export default function FeedbackInput({ inputs, description, title }: Props) {
             />
           );
         } else if (inp.input == "starRating") {
-          return <ClickableStars />;
+          return <ClickableStars key={index} />;
+        } else if (inp.input == "file") {
+          return (
+            <input
+              key={index}
+              type="file"
+              name={inp.name}
+              class="border p-2 rounded w-full"
+            />
+          );
         }
       })}
     </div>

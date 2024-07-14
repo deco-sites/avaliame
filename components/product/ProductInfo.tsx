@@ -117,9 +117,9 @@ function ProductInfo({ page }: Props) {
                 disabled={false}
               />
               <WishlistButton item={item} />
-              <a href={`/feedback/${productId}`}>
-                <button class="btn btn-primary no-animation">
-                  Avaliar AAAAAAA
+              <a class="mt-4 w-full" href={`/feedback/${productId}`}>
+                <button class="btn no-animation w-full">
+                  Escreva uma avaliação
                 </button>
               </a>
             </>

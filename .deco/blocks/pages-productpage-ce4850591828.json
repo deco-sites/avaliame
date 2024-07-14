@@ -28,10 +28,22 @@
       "sections": [
         {
           "__resolveType": "site/sections/avaliame/CommentList.tsx",
-          "comments": []
+          "comments": [],
+          "key": ""
         },
         {
           "__resolveType": "site/sections/avaliame/Carroussel.tsx"
+        }
+      ],
+      "sectionsLeft": [
+        {
+          "__resolveType": "site/sections/avaliame/CommentList.tsx",
+          "key": ""
+        }
+      ],
+      "sectionsRight": [
+        {
+          "__resolveType": "site/sections/avaliame/Ratings.tsx"
         }
       ]
     },
@@ -55,9 +67,6 @@
     },
     {
       "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
-    },
-    {
-      "__resolveType": "site/sections/avaliame/FeedbackInput.tsx"
     },
     {
       "__resolveType": "Footer"

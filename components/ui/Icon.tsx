@@ -20,7 +20,8 @@ export type AvailableIcons =
   | "trash"
   | "star"
   | "half-star"
-  | "empty-star";
+  | "empty-star"
+  | "ai";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

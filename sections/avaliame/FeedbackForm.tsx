@@ -8,6 +8,7 @@ import { useScript } from "deco/hooks/useScript.ts";
 export type Props = {
   sections: Section[];
   isSubmited?: boolean;
+  error?: string;
 };
 
 export async function action(props: Props, request: Request, _: AppContext) {
@@ -19,7 +20,23 @@ export async function action(props: Props, request: Request, _: AppContext) {
     const productId = match?.[1];
 
     const result = await request.formData();
-    const { error } = await supabase.from("feedback").insert({
+
+    result.forEach((value, key) => {
+      console.log(`FormData key: ${key}, value: ${value}`);
+    });
+
+    const file = result.get("file");
+    if (!(file instanceof File)) {
+      console.log("File is not an instance of File");
+      return {
+        ...props,
+        error: "Arquivo inválido. Por favor, envie um arquivo válido.",
+      };
+    }
+
+    console.log("File details:", file);
+
+    const feedbackInsert = await supabase.from("feedback").insert({
       rating: result.get("rating"),
       feedback_title: result.get("feedback_title"),
       feedback_description: result.get("feedback_description"),
@@ -28,12 +45,29 @@ export async function action(props: Props, request: Request, _: AppContext) {
       wash: result.get("wash"),
       user,
       product: productId,
+      image: `https://fgdjvuulxptiwpucmbwj.supabase.co/storage/v1/object/public/images/${file.name}`
     });
-    console.log(error);
 
-    return props;
-  } catch {
-    console.log("erro");
+    if (feedbackInsert.error) {
+      console.log(feedbackInsert.error);
+      return { ...props, error: feedbackInsert.error };
+    }
+
+    const imageUpload = await supabase.storage
+      .from("images")
+      .upload(file.name, file);
+
+    console.log(imageUpload.data);
+
+    if (imageUpload.error) {
+      console.log(imageUpload.error);
+      return { ...props, error: imageUpload.error };
+    }
+
+    return { ...props, isSubmited: true };
+  } catch (error) {
+    console.log("error ----->", error);
+    return { ...props, error: "Ocorreu um erro inesperado" };
   }
 }
 
@@ -41,6 +75,21 @@ export default function FeedbackForm(props: ComponentProps<typeof action>) {
   const goBack = () => {
     window.history.back();
   };
+
+  if (props.error) {
+    return (
+      <div class="bg-white p-6 rounded-lg text-center">
+        <h1 class="text-2xl font-bold mb-2">Erro ao enviar feedback</h1>
+        <p class="text-gray-600">{props.error}</p>
+        <button
+          hx-on:click={useScript(goBack)}
+          class="bg-blue-500 text-white rounded p-2 mt-4 hover:bg-blue-700"
+        >
+          Voltar
+        </button>
+      </div>
+    );
+  }
 
   if (props?.isSubmited) {
     return (
@@ -76,6 +125,7 @@ export default function FeedbackForm(props: ComponentProps<typeof action>) {
   return (
     <form
       hx-post={useComponent(import.meta.url, { isSubmited: true })}
+      enctype="multipart/form-data"
       hx-trigger="submit"
       id="form"
       class="w-full flex items-center flex-col gap-4"
