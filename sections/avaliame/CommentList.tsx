@@ -21,9 +21,9 @@ interface Key {
   qualification?: boolean;
 }
 
-export const loader = async (props: Key, _req: Request, _ctx: AppContext) => {
+export const loader = async (props: Key, req: Request, _ctx: AppContext) => {
   const regex = /\/products\/([^?]+)/;
-  const match = _req.url.match(regex);
+  const match = req.url.match(regex);
   const productId = match?.[1];
 
   if (!productId) {

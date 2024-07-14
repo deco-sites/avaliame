@@ -44,6 +44,14 @@
       "sectionsRight": [
         {
           "__resolveType": "site/sections/avaliame/Ratings.tsx"
+        },
+        {
+          "__resolveType": "site/sections/avaliame/CharacteristicsRating.tsx",
+          "sections": [
+            {
+              "__resolveType": "Campaign Timer - 01"
+            }
+          ]
         }
       ]
     },
